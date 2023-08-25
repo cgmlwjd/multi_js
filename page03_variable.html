@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트의 자료 유형(Data Type)</h1>
+    <h2>기본 자료형 : number, boolean, undefine, string</h2>
+    <h2>참조형 (부품) : object(객체)</h2>
+    <script>
+        //변수 선언(var, let, const)
+        var a;
+        // alert(a);
+        a = 100; //number, 동적인언어
+        document.write("a = " + a, "<br>");
+        document.write("a의 자료형: ", typeof a, "<br>");
+        a = "hello"
+        document.write("a = " + a, "<br>");
+        document.write("a의 자료형: ", typeof a, "<br>");
+
+        str="안녕하세요?";
+        document.write(str, "<br>");
+        //변수명 : 소문자로 시작, camel 표기법()
+        let helloworld=3.14;
+        let bool = false; //boolean(true, false)
+
+        document.write('hello world= ' + helloworld, " 자료형: ", typeof helloworld, "<br>");
+        document.write('bool=' + bool, " 자료형: ", typeof bool, "<br>");
+    </script>
+    <hr color="red">
+    <script>
+        //참조형: object, function
+        //object(객체유형)
+        //객체(속성+행동양식)
+        let car = new Object(); //객체 생성
+        car.color = 'black'; //속성
+        car.capacity = 2000; 
+        car.run = function(){
+            document.write('<h2>' + this.color + '색상의 자동차가 달려요</h2>')
+        }
+
+        car.run();
+
+        document.write('car의 자료형 ', typeof car)
+    </script>
+</body>
+</html>
