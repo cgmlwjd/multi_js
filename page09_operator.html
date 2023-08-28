@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page09_operator.html</title>
+</head>
+<body>
+    <h1>대입(할당)연산자, 연산후 할당연산자</h1>
+    <h2>+, +=, -=, *=, /=, %=</h2>
+    <script>
+        let y= 5;
+        let x= y;
+        
+        function print(str){
+            document.write("<h3>" + str + "</h3>");
+        }
+
+        print("x = " + x);
+        print("y = " + y);
+
+        x += 3; //x=x+3;
+        print("x = " + x);
+        x -= 2; //x=x-2;
+        print("x = " + x); //6
+        x*= 5;
+        print("x= " + x); //30
+        x/=7;
+        print("x = " + x);
+        x=30;
+        x%=7;
+        print("x = " + x);
+
+        let text1 = "Good! ";
+        let text2 = "Morning";
+        let text3 = text1 + text2;
+        print("text1 = " + text1);
+        print("text2 = " + text2);
+        print("text3 = " + text3); //Good Morning
+
+        //+=: 뒤에 오는 문자열에 앞의 문자열에 덧붙이기 함
+        text1 += text2;
+        print("text1 = " + text1);
+        print("text2 = " + text2);
+
+    </script>
+</body>
+</html>

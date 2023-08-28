@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>내장함수 - parseInt(), parseFloat()</h1>
+    <h2>parseInt(): 문자열을 정수형으로 변환하는 함수</h2>
+    <h2>ParseFloat(): 문자열을 실수형으로 변환하는 함수</h2>
+    <script>
+        let name=window.prompt("이름을 입력하세요");
+        print(name);
+        //alert(typeof name); //string
+        //alert(name);
+
+        let age=prompt('나이를 입력하세요');
+        print(`현재 나이: ${age}`);
+        //print(`내년 나이: ${age+1}`); //문자열 결합
+
+        let age2 = parseInt(age); //string => 정수형으로 변환
+        print(`내년 나이(age2): ${age2+1}`);
+        function print(str){
+            //document.write("<h3>" + str + "</h3>");
+            //백틱(`): tab키 위
+            document.write(`<h3>${str}</h3>`);
+        }
+    </script>
+</body>
+</html>

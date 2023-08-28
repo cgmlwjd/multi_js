@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문 - if, if ~ else, if ~ else if ~ else</h1>
+    <h2>다중 if문 : 조건 체크를 여러 개 해야될 때</h2>
+    <script>
+        let site = prompt('어느 사이트를 주로 이용하세요?');
+        //네이버 : 배경색 green
+        //구글 : 배경색 purple
+        //다음 : 배경색 blue
+
+        if(site == '네이버'){
+            document.body.bgColor = 'green';
+            window.location.href='http://www.naver.com';
+        }
+        else if(site == '구글'){
+            document.body.bgColor = 'purple';
+            location.href='http://www.google.com';
+        }
+        else if(site == '다음'){
+            document.body.bgColor = 'blue';
+            location.href='http://www.daum.net';
+        }
+        else {
+            document.body.bgColor = "black";
+        }
+    </script>
+</body>
+</html>

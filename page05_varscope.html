@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 변수 scope(유효범위)</h1>
+    <h2>전역변수, 지역변수, 매개변수</h2>
+    <script>
+        var global = "전역변수";
+
+        function hello(){
+            var local="지역변수"; // 속해있는 블럭내부에서만 사용할 수 있다.
+            //(local, variable, field)
+            myvar = 500; // var를 생략하고 변수를 선언, 초기화 => 전역변수
+            document.write("<h3>hello()의 함수 내의 local = " + local + "</h3>");
+        }
+
+        var hi = function(){
+            alert('hi global : ' + global); //전역
+            //alert('hi local : ' + local); //지역
+            alert('hi myvar: ' + myvar); //전역
+        }
+
+        var tel = "010-2222-3333";
+        document.write(tel, "<br>");
+        var tel = 100;
+        document.write(tel, "<br>");
+
+        let phone="010-3333-5555";
+        document.write(phone, "<br>");
+
+        //let는 재선언 불가
+        //let phone=200;
+        phone=300;
+        document.write(phone, "<br>");
+
+        const PI = 3.141592; //const는 상수를 선언할 때 사용
+        document.write(PI, "<br>");
+        PI = 500;
+        document.write(PI, "<br>");
+        
+    </script>
+    <h3>global 변수</h3>
+    <script>
+        document.write("global = " , global, "<br>");
+        //document.write("local = " , local, "<br>");
+        hello();
+        //hi();
+    </script>
+</body>
+</html>

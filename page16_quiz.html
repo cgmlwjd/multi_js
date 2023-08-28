@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://jeju.go.kr/hallasan/index.htm
+        //1번 문제
+        choice = prompt('당신은 어디를 가고 싶나요? (산, 바다, 강 중 선택)');
+        if(choice == '산'){
+            alert('한라산은 어때요?');
+            location.href='https://jeju.go.kr/hallasan/index.htm';
+        }
+        else if(choice == '바다'){
+            alert('해운대는 어때요?');
+            location.href='https://www.haeundae.go.kr/index.do';
+        }
+        else if(choice == '강'){
+            alert('한강은 어때요?');
+            location.href='https://namu.wiki/w/%ED%95%9C%EA%B0%95';
+        }
+        else{
+            alert('혹시 난독증이세요?');
+            location.reload(); //새로고침
+        }
+
+        //2번 문제
+        // id = prompt('아이디를 입력해주세요');
+        // if(id == 'admin'){
+        //     document.write('브라우저에 관리자로 로그인이 되었습니다.');
+        // }
+        // else{
+        //     document.write('브라우저에 일반 유저로 로그인이 되었습니다.');
+        // }
+    </script>
+</body>
+</html>

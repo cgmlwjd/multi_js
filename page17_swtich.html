@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문 - switch ~ case문</h1>
+    <!-- 
+        switch(변수 or 수식){
+            case 값1 : 실행문, break;
+            case 값2 : 실행문, break;
+            case 값3 : 실행문, break;
+            default: 실행문;
+        }
+    -->
+    <script>
+        let season = prompt('현재 계절을 입력하세요');
+        let str='';
+        let cr = 'black';
+        switch(season){
+            case '봄':
+                str = 'Spring'; //pink
+                cr = 'pink';
+                break;
+            
+            case '여름':
+                str = 'Summer'; //blue
+                cr = 'blue';
+                break;
+
+            case '가을':
+                str = 'Fall'; //maroon
+                cr = 'maroon';
+                break;
+            
+            case '겨울':
+                str = 'Winter'; //white
+                cr = 'white';
+                break;
+            
+            default:
+                str = '그런 계절은 없습니다.';
+        }
+
+        document.write(`<h2 style="color:${cr}">${str}</h2>`);
+    </script>
+</body>
+</html>

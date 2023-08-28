@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>논리 연산자</h1>
+    <h2>&&(and), ||(or), !(not)</h2>
+    <script>
+        let a = 50;
+        let b = 60;
+
+        const print= function(str){
+            document.write("<h3>" + str + "</h3>");
+        }
+
+        print("a: " + a + " b: " + b);
+        print("(a > b) && (b == 60): " + ((a > b) && (b == 60)));
+        print("(a < b) && (b == 60): " + ((a < b) && (b == 60)));
+
+        print("(a > b) || (b == 60): " + ((a > b) || (b == 60)));
+        print("(a < b) || (b == 60): " + ((a < b) || (b == 60)));
+        print("(a > b) || (b != 60): " + ((a < b) || (b != 60)));
+
+        print(!true); //false
+        print(!false); //true
+        print(!(a>b)); //true
+    </script>
+
+    <h3>Escape 문자(제어문자)</h3>
+    <ul>
+        <li> &lt; : less than</li>
+        <li> &gt; : greater than</li>
+        <li> &quot; : 쌍따옴표</li>
+        <li> &amp; : &</li>
+        <li> &copy; : copyright</li>
+        <li>멀&nbsp;티&nbsp;캠&nbsp;퍼&nbsp;&nbsp;&nbsp;스</li>
+    </ul>
+</body>
+</html>

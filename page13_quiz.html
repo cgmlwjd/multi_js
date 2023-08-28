@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page13_quiz.html</title>
+</head>
+<body>
+    <script>
+        //1번 문제
+        //let price = prompt('상품의 가격을 입력하세요');
+        //let qty=prompt('상품 수량을 입력하세요');
+
+        //가격: xxx원
+        //수량: xx개
+        //총가격: xxx원
+
+        function print(str){
+            document.write(`<h3>${str}</h3>`);
+        }
+
+        print(`가격: ${price}원`);
+        print(`수량: ${qty}개`);
+        print(`총가격: ${price*qty}원`);
+
+        //2번 문제
+        //let total = prompt('전체 구매 금액을 입력하세요');
+        //let one = prompt('물건 하나당 가격을 입력하세요');
+
+        print(`전체구매금액: ${total}원`);
+        print(`물건 하나당 가격: ${one}`);
+        print(`물건의 개수: ${total/one}`);
+
+        //3번 문제
+        //let apple = prompt('사과의 금액을 입력하세요');
+        //let pear = prompt('배의 금액을 입력하세요');
+        //let app = prompt('사과 구매 개수를 입력하세요');
+        //let pea = prompt('배 구매 개수를 입력하세요');
+
+        //print(`사과 금액이 배 구매 금액보다 ${apple*app - pear*pea}원 더 높습니다.`);
+        print(apple*app > pear*pea);
+        //4번 문제
+        //let gi = prompt('어제 온도를 입력하세요');
+        //let gi2 = prompt('오늘 온도를 입력하세요');
+        print(`어제와 오늘 온도의 평균은 ${(parseInt(gi) + parseInt(gi2))/2}입니다.`);
+        
+        let day1=25;
+        let day2=10;
+        let temp=(day1+day2)/2;
+        print(`${temp}`);
+    </script>
+    <hr>
+    <script>
+        row=prompt('가로를 입력하세요', '12.123');
+        column=prompt('세로를 입력하세요', '7.345');
+        result=row*column;
+        print('result: '+ result);
+        print('result: '+ result.toFixed(2));
+    </script>
+</body>
+</html>

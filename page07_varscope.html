@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수와 매개변수</h1>
+    <script>
+        /*
+        함수 구성방법 2가지
+        function으로 함수를 구성하는 방법
+        [1] function 함수명([매개변수])(...)
+
+        literal 방식으로 함수를 구하는 방법
+        [2] const 변수명 = function([매개변수]){
+            ...
+        }
+        */
+        //a, b는 매개변수 => 지역변수
+        //매개변수 앞에는 let이나 var를 붙이지 않는다.
+        function sum(a, b){
+            document.write("<h2>" + a + " + " + b + " = " + (a+b)+ "</h2>");
+        }
+
+        sum(3, 5);
+        sum(1.23, 4.18);
+        sum("Hello", "JavaScript");
+        sum(100); //NaN(Not a Number)
+
+        //살아 있는 범위가 sum에서 죽어서 다시 a, b를 작성해도 된다.
+        //리터럴 방식은 hosting이 지원되지 않는다.
+        //minus(1,2);
+        //함수를 먼저 구성하고 그 아래에서 호출해야된다.
+        const minus = function(a, b){
+            document.write("<h2>" + a + " - " + b + " = " + (a-b)+ "</h2>");
+        }
+        //에러로 a is not defined 뜸
+        // alert(a);[x]
+
+        //minus함수 호출
+        minus(5, 3);
+        minus(10, 7);
+        minus(45.123, 50.456);
+    </script>
+</body>
+</html>

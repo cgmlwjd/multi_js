@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page06_varscope.html</title>
+</head>
+<body>
+    <h1>var, let, const</h1>
+    <script>
+        x = 100;
+        y = 100;
+        sum = 1000;
+        if(x == y){ //if 블럭
+            let x = 999;
+            total = 100;
+            var sum = 200;
+            alert('total = ' + total); //100
+            alert('sum1 = ' + sum1); //200
+            alert('x = ' + x); //999
+        }
+
+        alert('x2 = ' + x); //전역변수
+        alert('sum2 = ' + sum);
+        alert('total2 = ' + total);
+    </script>
+</body>
+</html>

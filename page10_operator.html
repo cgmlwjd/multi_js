@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page10_operator.html</title>
+</head>
+<body>
+    <h1>비교연산자</h1>
+    <h2>==, ===, !=, !==, >, <, >=, <= </h2>
+    <script>
+        let x = 5; //num
+        let y = "5.0"; //str
+        let z = 5.0; //num
+        function print(str){
+            document.write("<h3>" + str + "</h3>");
+        }
+
+        print("x == y: " + (x==y)); //값이 같으면 true
+        print("x === y: " + (x===y)); //값도 같고 자료형도 같으면 true
+        print("x === z: " + (x === z)); //true
+
+        print("x != y: " + (x!=y)); //값이 다르면  true
+        print("x !== y: " + (x !== y)); //값이 다르거나, 자료형이 다르면 true
+
+        print("x > y: " + (x > y));
+        print("x >= y: " + (x >= y));
+    </script>
+</body>
+</html>

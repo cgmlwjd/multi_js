@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page14_if.html</title>
+</head>
+<body>
+    <h1>조건문 - if, if ~ else, if ~ else if ~ else</h1>
+    <!--
+        자바스크립트 제어문
+        [1] 순차문
+        [2] 조건문
+            <1> if문
+            <2> switch ~ case문
+        [3] 반복문
+            <1> for문
+            <2> while문
+            <3> do ~ while 루프문
+    -->
+    <script>
+        let food = window.confirm('아침을 먹었나요? ');
+        //alert(food); //확인버튼 => true, 취소버튼 => false
+        if(food == true){ //food==true
+            //true일 경우에만 실행
+            document.write(`<h3 style='color:green'>배가 부르겠네요</h3>`);
+        } else{
+            //false일 경우만 실행
+            document.write(`<h3 style='color:red'>배가 고프겠어요</h3>`);
+        }
+        document.write("The end");
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page04_variable.html</title>
+</head>
+<body>
+    <h1>자바스크립트 변수 scope(유효범위)</h1>
+    <h2>전역변수, 지역변수, 매개변수</h2>
+    <script type="text/javascript">
+        //기본자료형 : number(정수, 실수), boolean, string, undifined
+        //참조 유형 : object, function
+        var num;
+        //alert(num);
+        num = 50.12;
+        document.write("num = ", num, " type = ", typeof num, "<br>");
+        num = "Hello World!"; //string
+        document.write("num = ", num, " type = ", typeof num, "<br>");
+
+        var num = false; //boolean
+        document.write("num = ", num, " type = ", typeof num, "<br>");
+
+        //object 유형
+        //객체 = 속성 + 행동양식
+        //속성: 변수
+        //행동양식 : 함수 또는 메서드(method)
+        let person = new Object();
+        person.name="홍길동";
+        person.age=22;
+        person.run=function(){
+            document.write("<h3>" + this.name + "님 [" + this.age + "세]이 달립니다!</h3>");
+        }
+
+        document.write(person.name, "<br>");
+        document.write(person.age, "<br>");
+        person.run(); //함수 호출
+
+        // json(javascript object notation) 유형 -> object 유형
+        /*
+            객체 : {}, 배열 : [] 로 표기
+            let obj = {
+                속성명1: "값1",
+                속성명2: "값2",
+                속성명3: function(){}
+            }
+        */
+
+        let person2 = {
+            name: "김수영",
+            //값을 넣을 땐 숫자 제외 쌍따옴표 필수
+            age: 21,
+            info: function(){
+                document.write("name: " + this.name, "<br>");
+                document.write("age: " + this.age, "<br>");
+            }
+        }
+
+        //person2 의 이름 출력
+        document.write(person2.name, "<br>");
+
+        //person2의 info() 함수를 호출하세요
+        person2.info();
+
+        document.write("typeof person1: ", typeof person, "<br>");
+        document.write("typeof person2: ", typeof person2, "<br>");
+        document.write("typeof person2.info: ", typeof person2.info, "<br>");
+    </script>
+</body>
+</html>
