@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>반복문 - do ~ while문</h1>
+    <!-- 
+        while(조건식){
+            실행문;
+            증감식
+        }
+        => 조건 체크를 먼저 함. 조건식이 true면 반복실행
+        false이면 while 루프 벗어남
+
+        변수 선언 및 초기화식;
+        do{
+            실행문;
+            증감식;
+        } while(조건식);
+        => 조건 체크 하기 전 실행문 먼저 실행 후 조건 체크
+        조건식이 true면 계속 반복
+        조건식이 false일지라도 최소 한 번 수행
+
+    -->
+    <script>
+        // let i = 1;
+        // do{
+        //     document.write("JavaScript" + i, "<br>");
+        //     i++;
+        // }while(i > 100);
+
+        // 1~10까지의 곱을 구하시오
+        //1x2x3x ... x10= zzzz
+
+        let j = 1;
+        let gop = 1;
+        do{
+            if(j<10){
+                document.write(j + "*");
+            }else{
+                document.write(j + "=");
+            }
+            gop = gop * j;
+            j++;
+        } while(j<11);
+        document.write(gop, "<br>");
+
+        /*do~while문을 이용해서 1~30까지의 수중 5단위 마다 '땅콩',
+            10단위 마다는 '찐콩'을 출력하세요.
+            10,20,30 => 찐콩
+            5, 15, 25=> 땅콩
+            나머지는 숫자 출력
+            1 2 3 4 땅콩 6 7 8 9 찐콩 11....
+	    */
+        let a = 1;
+        do{
+            if(a % 10 == 0){
+                document.write("찐콩 ");
+            } else if(a % 5 == 0){
+                document.write("땅콩 ");
+            } else{
+                document.write(a + " ");
+            }
+            a++;
+        } while(a <= 30);
+    </script>
+</body>
+</html>

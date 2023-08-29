@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .m1{
+            background-color: gold;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        //5행 5열의 테이블 형태로(행, 열) 출력하기
+        let str =  `<table border='1' style='width:300px'>`;
+        for(let n = 1; n < 6; n++){
+            str += "<tr>";
+            for(let m = 1; m = 6; m++){
+                str+="<td>";
+                //document.write(`(${n}, ${m})`);
+                str += `(${n}, ${m})`
+                str+="</td>";
+            }
+            //document.write("<br>");
+            str += "</tr>";
+        }
+        str += `</table>`;
+
+        document.write(str);
+    </script> -->
+    <hr color="blue">
+    <script>
+        str = `<table border='1' style='width:90%; margin:auto'>
+            <tr>
+                <th colspan='8' class='m1'>구구단</th>
+            </tr> `;
+        
+            str +=`<tr>`;
+                for(let dan=2; dan < 10; dan++){
+                    str +=`<th>`;
+                        str += `${dan}단`;
+                    str +=`</th>`; 
+                }
+            str +=`</tr>`;
+                for(let k = 1; k < 10; k++){
+                    str += `<tr>`;
+                        for(let i = 2; i < 10; i++){
+                            str += `<td>`;
+                                str += `${i}x${k}=${i*k}`;
+                            str += `</td>`;
+                        }
+                    
+                    str += `</tr>`;
+                }
+            
+        str += `</table>`;
+        document.write(str);
+    </script>
+</body>
+</html>

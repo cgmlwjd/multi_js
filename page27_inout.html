@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>실습</h1>
+    숫자1 : <input type="text" name="num1" id="n1"><br><br>
+    숫자2 : <input type="text" name="num2" id="n2"><br><br>
+    <button onclick="plus()">더하기</button>
+    <button>곱하기</button>
+    <hr color="red">
+    <div id="result">
+
+    </div>
+    <script>
+        function plus() {
+            //document.getElementById('아이디명');
+            let obj1 = document.getElementById('n1');
+            let obj2 = document.getElementById('n2');
+
+            //input에는 value 속성이 있다 -> 사용자가 입력한 값
+            let val1 = parseInt(obj1.value); //string ==> int
+            let val2 = Number(obj2.value);
+
+            //id가 result인 요소를 받아 출력해보기
+            let obj3 = document.getElementById('result');
+
+            console.log('val1: ', val1); 
+            console.log('val2: ', val2);
+            //div, p, span..의 속성
+            //innerText: 해당 영역 안에 텍스트를 넣는다.
+            //innerHtml: 해당 영역 안에 html을 넣는다.
+            //obj3.innerText="안녕 나 더하기 할거야!";
+            obj3.innerHTML="<h2>안녕 나 더하기 할거야</h2>";
+            obj3.innerHTML += "<img src='img/cup.png'>";
+            // alert(obj1);
+            // alert(obj3);
+            obj.innerHTML += `<h3>${val1} + ${val2} = ${val1 + val2}</h3>`
+
+        }
+
+    </script>
+</body>
+
+</html>

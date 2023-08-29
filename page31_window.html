@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: blueviolet;
+            position: absolute;
+            left: 20px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        let obj;
+        window.onload=function(){
+            obj=document.querySelector('#circle');
+            //obj-document.getElemenById('circle');
+            //alert(obj);
+        }
+
+        function alarm(){
+            alert('까꿍~');
+        }
+        //setInterbal(함수, 밀리초) : 밀리초 단위로(주기적으로) 함수를 호출한다
+        let wid=null;
+        function show(){
+            wid=setInterval(alarm, 3000);
+        }
+
+        function stop(){
+            if(wid!=null){
+                clearInterval(wid);
+                wid = null;
+            }
+            
+        }
+
+        // setInterval(함수,밀리초): 밀리초 단위로 함수를 주기적으로 계속 호출한다
+        //[1] Move버튼을 누르면 #circle의 x좌표를 이동시켜서 공이 굴러가게 만드세요
+        //[2] Stop버튼 누르면 공 굴리지 중지시키세요
+        //[3] 공이 오른쪽 끝까지 가면 다시 돌아오게 하세요
+        let x=20;
+        function go(){
+            console.log('document.body.clienWidth: ', document.body.clientWidth)
+            if(wid == null){
+                wid=setInterval(function(){
+                    if(x>document.body.clientWidth){
+                        x=20;
+                    }
+                    obj.style.left=x+'px';
+                    x+=5;
+                    console.log('x: ', x);
+                }, 30);
+            }
+        
+        }
+    </script>
+</head>
+<body>
+    <h1>window 객체의 setInterval() / clearInterval()</h1>
+    <button onclick="go()">Move</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="show()">Click Me</button>
+    <hr>
+    <div id="circle">
+
+    </div>
+</body>
+</html>

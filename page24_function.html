@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){ //호이스팅 지원
+            console.log('test() 함수 호출됨');
+        }
+
+        let add=function(){ //호이스팅 불가
+            console.log('더하기 기능 처리');
+        }
+
+        let minus=function(){
+            console.log('빼기 기능 처리');
+        }
+    </script>
+</head>
+<body>
+    <h2>함수 - function</h2>
+    <button onclick="test()">테스트 해보자!</button>
+    <button onclick="add()">더해보자</button>
+    <button onmouseover="minus()">빼보자</button>
+</body>
+</html>

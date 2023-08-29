@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        .success{
+            color: yellowgreen;
+        }
+        .danger{
+            color: tomato;
+        }
+    </style>
+    <script>
+        let uid ='';
+        let upwd = '';
+        const login=function(){
+            //uid, upwd 입력값을 받아서
+            uid = document.getElementById('uid').value;
+            upwd = document.getElementById('upwd').value;
+            //alert(uid + "/" + upwd);
+            //유효성 체크
+            if(uid==''){
+                alert('아이디를 입력해야해요!');
+                return; //아래부분의 코드를 수행하지 않고 되돌아간다.
+            }
+            //비밀번호 값이 없을 때
+            if(!upwd){
+                alert('비밀번호를 입력해야해요!');
+                return;
+            }
+            //uid가 root, upwd가 1234
+            //둘다 맞으면 root님 환영합니다 result로 출력 글자색 그린
+            //둘 중 하나라도 틀리면 아이디가 틀리거나 비밀번호가 일치하지 않아요 출력 글자색 빨강
+            //alert(uid+"님 환영합니다!");
+            let obj = document.getElementById('result');
+            if(uid == 'root' && upwd == '1234'){
+                obj.innerHTML = `<h2 class = "success">${uid}님 환영합니다!</h2>`;
+            }else{
+                obj.innerHTML = `<h2 class = "danger">실패! 아이디 또는 비밀번호가 틀려요</h2>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>로그인</h1>
+    아이디: <input type="text" name="userid" id="uid"><br><br>
+    비밀번호: <input type="password" name="userpwd" id="upwd"><br><br>
+    <button onclick="login()">로그인</button>
+    <hr color="red">
+    <div id="result">
+
+    </div>
+</body>
+</html>

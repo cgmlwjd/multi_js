@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            width: 100px;
+            height: 100px;
+            background-color: magenta;
+            border-radius: 50%;
+            display: none;
+            /* display에 none을 주면 안보이고 해당 영역에도 사라짐 <-> block, inline-block*/
+            /* visibilty:hidden; 안보임. 해당영역은 그대로 <->visible */
+            /* opacity: 0; 투명도를 0. 해당 영역 그대로 <=> 1 */
+        }
+    </style>
+    <script>
+        //window가 모두 로드된 후에 익명함수를 실행하라는 의미
+        let obj;
+        let flag=1;
+        window.onload=function(){
+        //id가 circle인 div 요소를 obj로 할당해보세요
+            obj = document.getElementById('circle');
+            //alert('obj: ' + obj);
+        }
+
+        function show(){
+            //#circle을 등장시키기 display:none => display:block
+            //자바스크립트에서 css를 제어하기 위해서는 dom 객체들의 style 속성을 이용해야 함
+            //배경색 css에서는 background-color
+            //      javascript에서는 하이프('-')을 빼기 연산자로 다루기 때문에 backgroundColor
+            // dom객체.style.css 속성명 = '값'
+            if(flag==1){
+                obj.style.display='block';
+                obj.style.backgroundColor="lime";
+                flag-=1;
+            }
+            else{
+                obj.style.display='none';
+                flag+=1;
+            }
+        }
+        //setTimeout(함수, 숫자 => 밀리초)
+        //밀리초 이후에 함수를 실행한다
+
+        function alarm(){
+            alert("꽝!!!");
+        }
+        let wid=null;
+        function change(){
+            //3초 뒤에 "꽝!!"
+            //wid = window.setTimeout(alarm, 3000); //3초 1/1000초 단위
+            //2초 뒤에 서클 배경색 바꾸기
+            wid=setTimeout(function(){
+                obj.style.backgroundColor="skyblue";
+            }, 2000);
+        }
+
+        function clearTime(){
+            if(wid!= null){
+                clearTimeout(wid); //setTimeout()으로 실행중인 프로세스를 중지시킴
+                wid = null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>window객체의 setTimeou() / clearTimeout() 활용</h1>
+    <button onclick="show()">Click Me</button>
+    <button onclick="change()">Change Color</button>
+    <button onclick="clearTime()">setTimeout해제</button>
+
+    <hr color="blue">
+    <div id="circle">
+
+    </div>
+    <hr color="red">
+    
+</body>
+</html>

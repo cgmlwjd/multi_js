@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            window객체함수
+            - alert(), prompt(), comfirm()
+            - open(url, target, "속성값들")
+        */
+        let win=null; //팝업창을 참조할 변수
+        const openWin = function(){
+            //팝업창 띄우기
+            win=window.open("page01_js.html", "_blank", "width=500, height=500, left=200, top=200")
+            //win => 새로 띄운 윈도우창을 참조한다.
+        }
+
+        const closeWin = function(){
+            win.close();
+            win = null;
+        }
+    </script>
+</head>
+<body>
+    <h1>BOM(Browser Object Model) - window 객체(최상위 객체)</h1>
+    <button onclick="openWin()">팝업창 열기</button>
+    <button onclick="closeWin()">팝업창 닫기</button>
+</body>
+</html>
