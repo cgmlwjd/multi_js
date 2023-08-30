@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트2</title>
+    <script>
+        let win = null;
+        function openWin(){
+            let url='img/cup.png';
+            win = open(url, '_target', 'width=500, left=100, top=100');
+        }
+        function closeWin(){
+            if(win!=null){
+                win.close();
+                win=null;
+            }
+        }
+
+    </script>
+</head>
+<body onload="openWin()" onunload="closeWin()">
+    <h1>이벤트2</h1>
+    <!-- 
+        onfocus : 입력 포커스가 왔을 때
+        onblur  : 입력 포커스가 옮겨진 경우
+        onchange : 입력필드 값을 바꿨을 때. tab키 눌러 테스트하기
+        oninput: 값을 입력할 때
+    
+        onkeypress: 타이핑할 때 (shift, ctrl, alt키는 인식 못함)
+        onkeydown : 키를 누를 때 (모든 키를 인식한다)
+                onkeydown이 onkeypress보다 먼저 이벤트가 발생된다.
+        onkeyup : 키를 눌렀다 뗄 때
+        onmouseenter : 마우스가 영역에 들어왔을 때
+        onmouseleave : 마우스가 영역을 떠날 때                
+    -->
+    아이디: <input type="text" name="uid" id="uid"
+    onfocus="this.style.backgroundColor='bisque'"
+    onblur="this.style.backgroundColor=''"
+    onchange="document.bgColor='yellow'"
+    oninput="this.style.color='red'">
+    <br><br>
+
+    이  름: <input type="text" name="name" id="name"
+    onkeypress="console.log('keypress')"
+    onkeydown="console.log('keydown')"
+    onkeyup="console.log('keyup')">
+    <br><br>
+
+    Message: <input type="text" name="msg" id="msg" onkeypress="send()"><br><br>
+
+
+    자기소개: <textarea name="intro" id="intro" cols="30" rows="10"
+    onselect="this.style.backgroundColor='aqua'">이곳에 쓴 내용을 select 해보세요.</textarea>
+    <hr>
+    <button>Change1</button>
+    <button>Change2</button>
+
+    <!--
+        checkbox, radio: onclick
+        select: onchage
+        form: onsubmit
+        body: onload
+
+    -->
+
+    <script>
+        let obj=document.getElementById('msg');
+        let obj2=document.getElementById('intro');
+        let str='';
+        function send(){
+            let txt=obj.value;
+            str += txt; //메세지 누적
+            //console.log('event.keyCode: ' + event.keyCode)
+            if(event.keyCode==13){
+                //id가 msg인 요소의 입력값을 얻어와서
+                
+                console.log('txt: ', txt);
+                obj2.innerText=str;
+                obj.value='';
+                //id가 intro인 요소의 innerText 속성 값으로 할당하세요
+
+            }
+        }
+    </script>
+</body>
+</html>
